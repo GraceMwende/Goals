@@ -3,14 +3,34 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
+
+import { StrikethroughDirective } from './strikethrough.directive';
+import { DateCountPipe } from './date-count.pipe';
+import { GoalFormComponent } from './goal-form/goal-form.component';
+import { FormsModule } from '@angular/forms';
+import { GoalService } from './goal-service/goal.service';
+import {HttpClientModule} from '@angular/common/http';
+
+import { AppRoutingModule, routingComponent } from './app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StrikethroughDirective,
+    DateCountPipe,
+    GoalFormComponent,
+    NavbarComponent,
+    routingComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [GoalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
